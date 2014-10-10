@@ -263,7 +263,6 @@ function foo()
 }
 function bar()
 {
-
 }
 var func_map = {
     bar: bar,
@@ -286,7 +285,7 @@ var func_map = {
 
 ```
 
-## Append to exports at the top of your module or the bottom
+## Append to exports at the top or bottom of your module
 
 Group your exports at the top of your module, this defines the "interface" for 
 your module in one place.  If you're only exporting functions (which have global
