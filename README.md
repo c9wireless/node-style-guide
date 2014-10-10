@@ -37,46 +37,6 @@ cheap syntactic pleasures.
 Limit your lines to 80 characters. This is not a hard/fast rule but try when
 you can.
 
-## Use double quote for human strings
-
-Use double quotes in general for strings shown to humans.  Use single for 
-strings that are identifiers.
-
-*Right:*
-
-```js
-var foo = "bar";
-```
-
-*Wrong:*
-
-```js
-var foo = 'bar';
-```
-
-## Opening braces go on the next line
-
-Your opening braces go on the next line as the statement.
-
-*Right:*
-
-```js
-if( true ) 
-{
-    console.log("winning");
-}
-```
-
-*Wrong:*
-
-```js
-if( true ) {
-    console.log("losing");
-}
-```
-
-Also, notice the use of whitespace before and after the condition statement.
-
 ## Declare one variable per var statement
 
 Declare one variable per var statement, it makes it easier to re-order the
@@ -411,31 +371,6 @@ if( a.empty() )
 }
 ```
 
-
-## Use descriptive conditions
-
-Any non-trivial conditions should be assigned to a descriptively named variable or function:
-
-*Right:*
-
-```js
-var is_valid = password.length >= 4 && /^(?=.*\d).{4,}$/.test(password);
-
-if( is_valid ) 
-{
-    console.log("winning");
-}
-```
-
-*Wrong:*
-
-```js
-if( password.length >= 4 && /^(?=.*\d).{4,}$/.test(password) ) 
-{
-    console.log("losing");
-}
-```
-
 ## Write small functions, usually.
 
 Keep your functions short.  But, if you function is in fact very complicated
@@ -551,6 +486,70 @@ function check_db(done)
     }
 }
 ```
+
+## Use descriptive conditions
+
+Any non-trivial conditions should be assigned to a descriptively named variable or function:
+
+*Right:*
+
+```js
+var is_valid = password.length >= 4 && /^(?=.*\d).{4,}$/.test(password);
+
+if( is_valid ) 
+{
+    console.log("winning");
+}
+```
+
+*Wrong:*
+
+```js
+if( password.length >= 4 && /^(?=.*\d).{4,}$/.test(password) ) 
+{
+    console.log("losing");
+}
+```
+
+## Use double quote for human strings
+
+Use double quotes in general for strings shown to humans.  Use single for 
+strings that are identifiers.
+
+*Right:*
+
+```js
+var foo = "bar";
+```
+
+*Wrong:*
+
+```js
+var foo = 'bar';
+```
+
+## Opening braces go on the next line
+
+Your opening braces go on the next line as the statement.
+
+*Right:*
+
+```js
+if( true ) 
+{
+    console.log("winning");
+}
+```
+
+*Wrong:*
+
+```js
+if( true ) {
+    console.log("losing");
+}
+```
+
+Also, notice the use of whitespace before and after the condition statement.
 
 ## Use slashes for comments
 
