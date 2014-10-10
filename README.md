@@ -39,7 +39,8 @@ you can.
 
 ## Use double quote for human strings
 
-Use double quotes in general for strings.
+Use double quotes in general for strings shown to humans.  Use single for 
+strings that are identifiers.
 
 *Right:*
 
@@ -62,7 +63,7 @@ Your opening braces go on the next line as the statement.
 ```js
 if( true ) 
 {
-    console.log('winning');
+    console.log("winning");
 }
 ```
 
@@ -70,7 +71,7 @@ if( true )
 
 ```js
 if( true ) {
-    console.log('losing');
+    console.log("losing");
 }
 ```
 
@@ -375,7 +376,7 @@ when you could just use a built in property
 var a = [];
 if( !a.length ) 
 {
-    console.log('winning');
+    console.log("winning");
 }
 ```
 
@@ -392,7 +393,7 @@ if( typeof Array.prototype.empty != 'function' )
 var a = [];
 if( a.empty() ) 
 {
-    console.log('losing');
+    console.log("draw");
 }
 ```
 
@@ -406,7 +407,7 @@ Array.prototype.empty = function() {
 var a = [];
 if( a.empty() ) 
 {
-    console.log('losing');
+    console.log("losing");
 }
 ```
 
@@ -422,7 +423,7 @@ var is_valid = password.length >= 4 && /^(?=.*\d).{4,}$/.test(password);
 
 if( is_valid ) 
 {
-    console.log('winning');
+    console.log("winning");
 }
 ```
 
@@ -431,7 +432,7 @@ if( is_valid )
 ```js
 if( password.length >= 4 && /^(?=.*\d).{4,}$/.test(password) ) 
 {
-    console.log('losing');
+    console.log("losing");
 }
 ```
 
