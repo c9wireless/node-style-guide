@@ -4,8 +4,7 @@ node-style-guide
 This guide created by Jim Lake for Boingo NodeJS projects.  It sources some
 items from [Felix Geisendörfer](http://felixge.de/) and is
 licensed under the [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
-license. You are encouraged to fork this repository and make adjustments
-according to your preferences.
+license.
 
 ## 4 Spaces for indention
 
