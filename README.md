@@ -50,11 +50,10 @@ var keys = ["foo", "bar"];
 var values = [23, 42];
 
 var object = {};
-while( keys.length ) 
+_.each(keys,function(key,index))
 {
-    var key = keys.pop();
-    object[key] = values.pop();
-}
+    object[key] = values[index];
+});
 ```
 
 *Wrong:*
