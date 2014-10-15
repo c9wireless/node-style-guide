@@ -72,9 +72,40 @@ while( keys.length )
 }
 ```
 
+## Function variables  var as late as possible and on assignment.
+
+Variables should be var'ed on first assignment, not at the top of the function.
+
+*Right:*
+
+```js
+function foo()
+{
+    var a = do_something_first();
+    var b = do_something_else();
+    var c = a + b + 5;
+    do_third_thing(a,b,c);
+}
+```
+
+*Wrong:*
+
+```js
+function foo()
+{
+    var a;
+    var b;
+    var c;
+    a = do_something_first();
+    b = do_something_else();
+    c = a + b + 5;
+    do_third_thing(a,b,c);
+}
+```
+
 ## Use lower_lower for variables, properties and function names
 
-Variables, properties and function names should use `lowerCamelCase`.  They
+Variables, properties and function names should use `lower_case`.  They
 should also be descriptive. Single character variables and uncommon
 abbreviations should generally be avoided.
 
@@ -550,6 +581,43 @@ if( true ) {
 ```
 
 Also, notice the use of whitespace before and after the condition statement.
+
+## Avoid for/do/while
+
+Avoid built in looping contructs and use functional operators.  You should
+leverage underscore as it has both the simple operations and lot of advanced
+operations with consistent bevior across different types of objects.
+
+*Right:*
+
+```js
+var some_list = [1,2,3];
+_.each(function(val)
+{
+    console.log("val:",val);
+});
+var some_obj = { a: 1, b: 2, c: 3 };
+_.each(function(val,key)
+{
+    console.log("key:",key,"val:",val);
+});
+```
+
+*Wrong:*
+
+```js
+var some_list = [1,2,3];
+for( var i = 0 ; i < some_list.length ; ++i )
+{
+    var val = some_list[i];
+    console.log("val:",val);
+}
+var some_obj = { a: 1, b: 2, c: 3 };
+for( var val in some_obj )
+{
+    console.log("val:",val);
+}
+```
 
 ## Use slashes for comments
 
